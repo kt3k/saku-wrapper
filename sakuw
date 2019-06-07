@@ -12,14 +12,14 @@ EXE=$VERSION_DIR/$PJ
 if [ ! -e "$EXE" ]; then
   echo "Downloading the $PJ binary"
   TEMP=$(mktemp -d)
-  curl -fsSL https://github.com/kt3k/$PJ/releases/download/$TAG/${PJ}_${VERSION}_$(uname | tr '[:upper:]' '[:lower:]')_amd64.tar.gz -o $TEMP/bin.tgz # download
+  curl -fsSL https://github.com/kt3k/"$PJ"/releases/download/"$TAG"/${PJ}_"$VERSION"_"$(uname | tr '[:upper:]' '[:lower:]')"_amd64.tar.gz -o "$TEMP"/bin.tgz
   echo "Extracting the $PJ binary"
-  mkdir -p $VERSION_DIR
+  mkdir -p "$VERSION_DIR"
   # gunzip ...
-  tar -C $VERSION_DIR -xf $TEMP/bin.tgz $PJ
-  rm -rf $TEMP
-  chmod +x $EXE
+  tar -C "$VERSION_DIR" -xf "$TEMP"/bin.tgz "$PJ"
+  rm -rf "$TEMP"
+  chmod +x "$EXE"
 fi
 
 # Run $PJ
-$EXE $@
+$EXE "$@"

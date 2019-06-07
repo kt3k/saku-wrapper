@@ -1,0 +1,5 @@
+language: shell
+
+script:
+- ./sakuw test
+- shellcheck sakuw
