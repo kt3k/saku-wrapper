@@ -1,5 +1,5 @@
 #!/bin/sh
-set -euo pipefail
+set -eu
 PJ=saku
 
 # get the version tag from $PJ.md
