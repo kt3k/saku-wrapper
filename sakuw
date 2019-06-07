@@ -21,5 +21,7 @@ if [ ! -e "$EXE" ]; then
   chmod +x "$EXE"
 fi
 
+echo "Use $EXE"
+
 # Run $PJ
 $EXE "$@"
